@@ -20,8 +20,7 @@
 
 #ifndef EX_DETACHED
 // Kernel is DevMenu's delegate only in non-detached builds.
-#import "EXDevMenuManager.h"
-#import "EXDevMenuDelegateProtocol.h"
+#import <EXDevMenu/EXDevMenuManager.h>
 
 @interface EXKernel () <EXDevMenuDelegateProtocol>
 @end
@@ -418,17 +417,20 @@ NSString * const kEXReloadActiveAppRequest = @"EXReloadActiveAppRequest";
 #ifndef EX_DETACHED
 #pragma mark - EXDevMenuDelegateProtocol
 
-- (RCTBridge *)mainBridgeForDevMenuManager:(EXDevMenuManager *)manager
-{
-  return _appRegistry.homeAppRecord.appManager.reactBridge;
-}
-
-- (nullable RCTBridge *)appBridgeForDevMenuManager:(EXDevMenuManager *)manager
+- (nullable id<EXDevMenuBridgeProtocol>)appBridgeForDevMenuManager:(nonnull EXDevMenuManager *)manager
 {
   if (_visibleApp == _appRegistry.homeAppRecord) {
     return nil;
   }
   return _visibleApp.appManager.reactBridge;
+}
+
+- (nullable NSDictionary<NSString *, NSObject *> *)appInfoForDevMenuManager:(nonnull EXDevMenuManager *)manager
+{
+  return @{
+    @"manifestUrl": _visibleApp.appLoader.manifestUrl.absoluteString,
+    @"manifest": RCTNullIfNil(_visibleApp.appLoader.manifest),
+  };
 }
 
 - (BOOL)devMenuManager:(EXDevMenuManager *)manager canChangeVisibility:(BOOL)visibility

@@ -55,6 +55,8 @@ PODS:
     - UMCore
   - EXDevice (2.2.1):
     - UMCore
+  - EXDevMenu (0.1.0):
+    - React
   - EXDocumentPicker (8.2.1):
     - UMCore
     - UMFileSystemInterface
@@ -557,6 +559,7 @@ DEPENDENCIES:
   - EXContacts (from `../../../packages/expo-contacts/ios`)
   - EXCrypto (from `../../../packages/expo-crypto/ios`)
   - EXDevice (from `../../../packages/expo-device/ios`)
+  - EXDevMenu (from `../../../packages/expo-dev-menu`)
   - EXDocumentPicker (from `../../../packages/expo-document-picker/ios`)
   - EXErrorRecovery (from `../../../packages/expo-error-recovery/ios`)
   - EXFacebook (from `../../../packages/expo-facebook/ios`)
@@ -703,6 +706,8 @@ EXTERNAL SOURCES:
     :path: "../../../packages/expo-crypto/ios"
   EXDevice:
     :path: "../../../packages/expo-device/ios"
+  EXDevMenu:
+    :path: "../../../packages/expo-dev-menu"
   EXDocumentPicker:
     :path: "../../../packages/expo-document-picker/ios"
   EXErrorRecovery:
@@ -890,6 +895,7 @@ SPEC CHECKSUMS:
   EXContacts: 9ecc819adfb7690ed90ebcaf93d23ac84fe957f1
   EXCrypto: 867e1d45d513e39ab9d7706232435edb1cf756cd
   EXDevice: befd3b2619915e615c3753c9f83309808aa0cdf5
+  EXDevMenu: 94ae628201ce5a9a91fc6e73aaee8c370d355895
   EXDocumentPicker: 38b1bc0995d3b8c879142be6d6753866484025a8
   EXErrorRecovery: 500f1d4231c534f415e86caeb3fc677c7f5dd23c
   EXFacebook: 3c124265fb7230cf1071329208b765e0e187789e
@@ -991,6 +997,6 @@ SPEC CHECKSUMS:
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 5e336c4046a5cf7924b429b07035b2e33d122cdd
+PODFILE CHECKSUM: 5e4eed0ce709c226c67ca8359bbacb2d6aef1d74
 
 COCOAPODS: 1.9.2

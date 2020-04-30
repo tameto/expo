@@ -2,6 +2,8 @@
 
 @import UIKit;
 
+#import <EXDevMenu/EXDevMenuManager.h>
+
 #import "EXAppDelegate.h"
 #import "EXAppViewController.h"
 #import "EXHomeAppManager.h"
@@ -12,7 +14,6 @@
 #import "EXKernelLinkingManager.h"
 #import "EXKernelServiceRegistry.h"
 #import "EXRootViewController.h"
-#import "EXDevMenuManager.h"
 
 NSString * const kEXHomeDisableNuxDefaultsKey = @"EXKernelDisableNuxDefaultsKey";
 NSString * const kEXHomeIsNuxFinishedDefaultsKey = @"EXHomeIsNuxFinishedDefaultsKey";

@@ -27,5 +27,6 @@
 
 // OTA Updates
 
+#import <EXDevMenu/EXDevMenuManager.h>
 //#import <EXUpdates/EXUpdatesAppController.h>
 

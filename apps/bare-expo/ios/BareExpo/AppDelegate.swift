@@ -11,6 +11,7 @@ import Foundation
 @UIApplicationMain
 class AppDelegate: UMAppDelegateWrapper {
   var moduleRegistryAdapter: UMModuleRegistryAdapter!
+  var bridge: RCTBridge?
   
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -28,7 +29,10 @@ class AppDelegate: UMAppDelegateWrapper {
       
       window?.rootViewController = rootViewController
       window?.makeKeyAndVisible()
+      self.bridge = bridge;
     }
+
+    EXDevMenuManager.sharedInstance().delegate = self;
 
     super.application(application, didFinishLaunchingWithOptions: launchOptions)
     
@@ -89,5 +93,21 @@ extension AppDelegate: RCTBridgeDelegate {
     // Let's bring it back in Bare Expo.
     extraModules?.append(RCTDevMenu() as! RCTBridgeModule)
     return extraModules
+  }
+}
+
+// MARK: EXDevMenuDelegateProtocol
+
+extension AppDelegate: EXDevMenuDelegateProtocol {
+  func appBridge(for manager: EXDevMenuManager) -> Any? {
+    return self.bridge;
+  }
+
+  func appInfo(for manager: EXDevMenuManager) -> [String : NSObject]? {
+    return nil;
+  }
+
+  func devMenuManager(_ manager: EXDevMenuManager, canChangeVisibility visibility: Bool) -> Bool {
+    return true;
   }
 }

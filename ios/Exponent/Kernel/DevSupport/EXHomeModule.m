@@ -1,17 +1,16 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
+#ifndef EX_DETACHED
+#import <EXDevMenu/EXDevMenuManager.h>
+#endif
+#import <React/RCTEventDispatcher.h>
+
 #import "EXEnvironment.h"
 #import "EXHomeModule.h"
 #import "EXSession.h"
 #import "EXUnversioned.h"
 #import "EXClientReleaseType.h"
 #import "EXKernelDevKeyCommands.h"
-
-#ifndef EX_DETACHED
-#import "EXDevMenuManager.h"
-#endif
-
-#import <React/RCTEventDispatcher.h>
 
 @interface EXHomeModule ()
 

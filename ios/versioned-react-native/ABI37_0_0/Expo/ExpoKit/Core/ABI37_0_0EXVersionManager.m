@@ -365,6 +365,10 @@ void ABI37_0_0EXRegisterScopedModule(Class moduleClass, ...)
   NSString *localStorageDirectory = [fileSystemModule.documentDirectory stringByAppendingPathComponent:@"RCTAsyncLocalStorage"];
   [extraModules addObject:[[ABI37_0_0RCTAsyncLocalStorage alloc] initWithStorageDirectory:localStorageDirectory]];
 
+  if (params[@"devSupportModule"]) {
+    id<ABI37_0_0RCTBridgeModule> devSupportModule = params[@"devSupportModule"];
+    [extraModules addObject:devSupportModule];
+  }
   return extraModules;
 }
 

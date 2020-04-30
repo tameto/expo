@@ -9339,6 +9339,42 @@ CACHE_KEYS:
     PROJECT_NAME: EXDevice
     SPECS:
       - EXDevice (2.2.1)
+  EXDevMenu:
+    BUILD_SETTINGS_CHECKSUM:
+      EXDevMenu:
+        :debug: f8b5ce4da61e37e36987ad31873b569d
+        :release: f8b5ce4da61e37e36987ad31873b569d
+    CHECKSUM: 94ae628201ce5a9a91fc6e73aaee8c370d355895
+    FILES:
+      - "../../packages/expo-dev-menu/assets/.dev-menu-packager-host"
+      - "../../packages/expo-dev-menu/assets/EXDevMenuApp.ios.js"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuAppInstance.h"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuAppInstance.m"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuGestureRecognizer.h"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuGestureRecognizer.m"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuManager.h"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuManager.m"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuViewController.h"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuViewController.m"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuWindow.h"
+      - "../../packages/expo-dev-menu/ios/EXDevMenuWindow.m"
+      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuGestureInterceptor.h"
+      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuGestureInterceptor.m"
+      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuMotionInterceptor.h"
+      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuMotionInterceptor.m"
+      - "../../packages/expo-dev-menu/ios/MenuItems/EXDevMenuItem.h"
+      - "../../packages/expo-dev-menu/ios/MenuItems/EXDevMenuItem.m"
+      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuInternalModule.h"
+      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuInternalModule.m"
+      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuModule.h"
+      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuModule.m"
+      - "../../packages/expo-dev-menu/ios/Protocols/EXDevMenuBridgeProtocol.h"
+      - "../../packages/expo-dev-menu/ios/Protocols/EXDevMenuDelegateProtocol.h"
+      - "../../packages/expo-dev-menu/ios/Protocols/EXDevMenuExtensionProtocol.h"
+      - "../../packages/expo-dev-menu/README.md"
+    PROJECT_NAME: EXDevMenu
+    SPECS:
+      - EXDevMenu (0.1.0)
   EXDocumentPicker:
     BUILD_SETTINGS_CHECKSUM:
       EXDocumentPicker:
@@ -10310,9 +10346,10 @@ CACHE_KEYS:
       - nanopb/encode (0.3.9011)
   Pods-Exponent:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: fcc77c5ae89f76311e5bb4602fe4f824
-      Release: fcc77c5ae89f76311e5bb4602fe4f824
+      Debug: 1eb3ce7a3ed1b7bc90804d945d9cec3e
+      Release: 1eb3ce7a3ed1b7bc90804d945d9cec3e
     FILES:
+      - "${PODS_CONFIGURATION_BUILD_DIR}/EXDevMenu/EXDevMenu.bundle"
       - "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMLVisionFaceModel/GoogleMVFaceDetectorResources.bundle"
       - "${PODS_ROOT}/Amplitude-iOS/Amplitude/api.amplitude.com.der"
       - "${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoCaLimitedRsaCertificationAuthority.der"
@@ -10323,12 +10360,12 @@ CACHE_KEYS:
       - "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   Pods-ExponentIntegrationTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 2730f0b4379717c9bf4b0c4b22288dcc
-      Release: 2730f0b4379717c9bf4b0c4b22288dcc
+      Debug: 394ac874011676daf701cb81385cff68
+      Release: 394ac874011676daf701cb81385cff68
   Pods-Tests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 2730f0b4379717c9bf4b0c4b22288dcc
-      Release: 2730f0b4379717c9bf4b0c4b22288dcc
+      Debug: 394ac874011676daf701cb81385cff68
+      Release: 394ac874011676daf701cb81385cff68
   Protobuf:
     BUILD_SETTINGS_CHECKSUM:
       Protobuf:
