@@ -193,20 +193,6 @@ dependencies {
   implementation(project(':expoview-abi38_0_0'))
   // END_SDK_38
 
-
-  // BEGIN_SDK_37
-  implementation(project(':expoview-abi37_0_0'))
-  // END_SDK_37
-
-  // BEGIN_SDK_36
-  implementation(project(':expoview-abi36_0_0'))
-  // END_SDK_36
-
-
-  // BEGIN_SDK_35
-  implementation(project(':expoview-abi35_0_0'))
-  // END_SDK_35
-
   // This is not needed in shell apps, the Amplitude module will include this dep if installed
   implementation 'com.amplitude:android-sdk:2.23.2'
 
@@ -232,7 +218,6 @@ dependencies {
         'expo-in-app-purchases',
         'expo-payments-stripe',
         'expo-updates',
-        'expo-splash-screen'
       ]
   ])
   END UNCOMMENT WHEN DISTRIBUTING */

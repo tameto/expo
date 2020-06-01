@@ -12,9 +12,6 @@ project(':unimodules-test-core').projectDir = new File(rootDir, '../packages/uni
 [
     // ADD_NEW_SUPPORTED_ABIS_HERE
     "abi38_0_0",
-    "abi37_0_0",
-    "abi36_0_0",
-    "abi35_0_0",
 ].forEach({ abiVariant ->
   include ":expoview-$abiVariant"
   project(":expoview-$abiVariant").projectDir = new File(rootDir, "versioned-abis/expoview-$abiVariant")
@@ -37,7 +34,6 @@ includeUnimodulesProjects(
         'expo-bluetooth',
         'expo-in-app-purchases',
         'expo-updates',
-        'expo-splash-screen'
 // FLAG_END_REMOVE__UPDATE_EXPOKIT
     ]
 ]
