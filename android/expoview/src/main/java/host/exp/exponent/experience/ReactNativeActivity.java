@@ -45,7 +45,7 @@ import de.greenrobot.event.EventBus;
 import host.exp.exponent.ABIVersion;
 import host.exp.exponent.Constants;
 import host.exp.exponent.ExponentManifest;
-import host.exp.exponent.LoadingView;
+import host.exp.exponent.legacy__LoadingView;
 import host.exp.exponent.RNObject;
 import host.exp.exponent.analytics.Analytics;
 import host.exp.exponent.analytics.EXL;
@@ -124,7 +124,7 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
   protected RNObject mReactRootView;
   private FrameLayout mLayout;
   private FrameLayout mContainer;
-  private LoadingView mLoadingView;
+  private legacy__LoadingView legacy__mLoadingView;
   private Handler mHandler = new Handler();
   private Handler mLoadingHandler = new Handler();
   private DoubleTapReloadRecognizer mDoubleTapReloadRecognizer;
@@ -168,10 +168,14 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
 
     mContainer = new FrameLayout(this);
     mLayout.addView(mContainer);
-    mLoadingView = new LoadingView(this);
+    if (this.legacy__shouldShowLoadingView()) {
+      legacy__mLoadingView = new legacy__LoadingView(this);
+    }
     if (!Constants.isStandaloneApp() || Constants.SHOW_LOADING_VIEW_IN_SHELL_APP) {
       mContainer.setBackgroundColor(ContextCompat.getColor(this, R.color.splashBackground));
-      mLayout.addView(mLoadingView);
+      if (legacy__mLoadingView != null) {
+        mLayout.addView(legacy__mLoadingView);
+      }
     }
 
     mDoubleTapReloadRecognizer = new DoubleTapReloadRecognizer();
@@ -182,6 +186,13 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
     // Can't call this here because subclasses need to do other initialization
     // before their listener methods are called.
     // EventBus.getDefault().registerSticky(this);
+  }
+
+  /**
+   * Temporary method for handling LoadingView
+   */
+  protected boolean legacy__shouldShowLoadingView() {
+    return true;
   }
 
   protected void setView(final View view) {
@@ -219,9 +230,11 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
 
   protected void updateLoadingProgress(String status, Integer done, Integer total) {
     if (!mIsLoading) {
-      showLoadingScreen(mManifest);
+      legacy__showLoadingScreen(mManifest);
     }
-    mLoadingView.updateProgress(status, done, total);
+    if (legacy__mLoadingView != null) {
+      legacy__mLoadingView.updateProgress(status, done, total);
+    }
   }
 
   protected void removeViews() {
@@ -252,11 +265,13 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
     }
   }
 
-  public void showLoadingScreen(JSONObject manifest) {
-    mLoadingView.setManifest(manifest);
-    mLoadingView.setShowIcon(true);
-    mLoadingView.clearAnimation();
-    mLoadingView.setAlpha(1.0f);
+  public void legacy__showLoadingScreen(JSONObject manifest) {
+    if (legacy__mLoadingView != null) {
+      legacy__mLoadingView.setManifest(manifest);
+      legacy__mLoadingView.setShowIcon(true);
+      legacy__mLoadingView.clearAnimation();
+      legacy__mLoadingView.setAlpha(1.0f);
+    }
     mIsLoading = true;
   }
 
@@ -283,10 +298,10 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
       EXL.e(TAG, e);
     }
 
-    if (mLoadingView != null && mLoadingView.getParent() == mLayout) {
-      mLoadingView.setAlpha(0.0f);
-      mLoadingView.setShowIcon(false);
-      mLoadingView.setDoneLoading();
+    if (legacy__mLoadingView != null && legacy__mLoadingView.getParent() == mLayout) {
+      legacy__mLoadingView.setAlpha(0.0f);
+      legacy__mLoadingView.setShowIcon(false);
+      legacy__mLoadingView.setDoneLoading();
     }
 
     mSplashScreenKernelService.reset();
@@ -311,7 +326,7 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
         if (didDoubleTapR && !shouldReloadFromManifest) {
           // The loading screen is hidden by versioned code when reloading JS so we can't show it
           // on older sdks.
-          showLoadingScreen(mManifest);
+          legacy__showLoadingScreen(mManifest);
           devSupportManager.call("handleReloadJS");
           return true;
         } else if (didDoubleTapR && shouldReloadFromManifest) {
