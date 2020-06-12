@@ -1,8 +1,5 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
-#ifndef EX_DETACHED
-#import <EXDevMenu/EXDevMenuManager.h>
-#endif
 #import <React/RCTEventDispatcher.h>
 
 #import "EXEnvironment.h"
@@ -11,6 +8,10 @@
 #import "EXUnversioned.h"
 #import "EXClientReleaseType.h"
 #import "EXKernelDevKeyCommands.h"
+
+#ifndef EX_DETACHED
+@import EXDevMenu;
+#endif
 
 @interface EXHomeModule ()
 
@@ -93,7 +94,7 @@
 {
 #ifndef EX_DETACHED
   void (^callback)(id) = ^(id arg){
-    [[EXDevMenuManager sharedInstance] closeWithoutAnimation];
+    [[DevMenuManager shared] closeWithoutAnimation];
   };
   [self dispatchJSEvent:@"requestToCloseDevMenu" body:nil onSuccess:callback onFailure:callback];
 #endif
@@ -175,7 +176,7 @@ RCT_EXPORT_METHOD(reloadAppAsync)
 RCT_EXPORT_METHOD(closeDevMenuAsync)
 {
 #ifndef EX_DETACHED
-  [[EXDevMenuManager sharedInstance] closeWithoutAnimation];
+  [[DevMenuManager shared] closeWithoutAnimation];
 #endif
 }
 
@@ -204,11 +205,9 @@ RCT_REMAP_METHOD(getDevMenuSettingsAsync,
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
 #ifndef EX_DETACHED
-  EXDevMenuManager *manager = [EXDevMenuManager sharedInstance];
-
   resolve(@{
-    @"motionGestureEnabled": @(manager.interceptMotionGesture),
-    @"touchGestureEnabled": @(manager.interceptTouchGesture),
+    @"motionGestureEnabled": @(DevMenuManager.interceptsMotionGestures),
+    @"touchGestureEnabled": @(DevMenuManager.interceptsTouchGestures),
   });
 #else
   resolve(@{});
@@ -222,12 +221,10 @@ RCT_REMAP_METHOD(setDevMenuSettingAsync,
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
 #ifndef EX_DETACHED
-  EXDevMenuManager *manager = [EXDevMenuManager sharedInstance];
-
   if ([key isEqualToString:@"motionGestureEnabled"]) {
-    manager.interceptMotionGesture = [value boolValue];
+    DevMenuManager.interceptsMotionGestures = [value boolValue];
   } else if ([key isEqualToString:@"touchGestureEnabled"]) {
-    manager.interceptTouchGesture = [value boolValue];
+    DevMenuManager.interceptsTouchGestures = [value boolValue];
   } else {
     return reject(@"ERR_DEV_MENU_SETTING_NOT_EXISTS", @"Specified dev menu setting doesn't exist.", nil);
   }

@@ -19,7 +19,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTRootView.h>
 
-#import <EXDevMenu/EXDevMenuModule.h>
+@import EXDevMenu;
 
 @interface EXVersionManager (Legacy)
 // TODO: remove after non-unimodules SDK versions are dropped
@@ -289,7 +289,7 @@ typedef void (^SDK21RCTSourceLoadBlock)(NSError *error, NSData *source, int64_t 
                            @"services": [EXKernel sharedInstance].serviceRegistry.allServices,
                            @"singletonModules": [UMModuleRegistryProvider singletonModules],
                            @"moduleRegistryDelegateClass": RCTNullIfNil([self moduleRegistryDelegateClass]),
-                           @"devMenuModule": [EXDevMenuModule new],
+                           @"devMenuModule": [DevMenuModule new],
                            };
   return [self.versionManager extraModulesWithParams:params];
 }

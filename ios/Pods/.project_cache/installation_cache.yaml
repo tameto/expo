@@ -9342,35 +9342,28 @@ CACHE_KEYS:
   EXDevMenu:
     BUILD_SETTINGS_CHECKSUM:
       EXDevMenu:
-        :debug: f8b5ce4da61e37e36987ad31873b569d
-        :release: f8b5ce4da61e37e36987ad31873b569d
-    CHECKSUM: 94ae628201ce5a9a91fc6e73aaee8c370d355895
+        :debug: cc711f6ee4e4d726f9a51fd62954db04
+        :release: cc711f6ee4e4d726f9a51fd62954db04
+    CHECKSUM: 83316fe0e2fabf443a2b60e5cf3bb0dc78c3d430
     FILES:
       - "../../packages/expo-dev-menu/assets/.dev-menu-packager-host"
       - "../../packages/expo-dev-menu/assets/EXDevMenuApp.ios.js"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuAppInstance.h"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuAppInstance.m"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuGestureRecognizer.h"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuGestureRecognizer.m"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuManager.h"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuManager.m"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuViewController.h"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuViewController.m"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuWindow.h"
-      - "../../packages/expo-dev-menu/ios/EXDevMenuWindow.m"
-      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuGestureInterceptor.h"
-      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuGestureInterceptor.m"
-      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuMotionInterceptor.h"
-      - "../../packages/expo-dev-menu/ios/Interceptors/EXDevMenuMotionInterceptor.m"
-      - "../../packages/expo-dev-menu/ios/MenuItems/EXDevMenuItem.h"
-      - "../../packages/expo-dev-menu/ios/MenuItems/EXDevMenuItem.m"
-      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuInternalModule.h"
-      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuInternalModule.m"
-      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuModule.h"
-      - "../../packages/expo-dev-menu/ios/Modules/EXDevMenuModule.m"
-      - "../../packages/expo-dev-menu/ios/Protocols/EXDevMenuBridgeProtocol.h"
-      - "../../packages/expo-dev-menu/ios/Protocols/EXDevMenuDelegateProtocol.h"
-      - "../../packages/expo-dev-menu/ios/Protocols/EXDevMenuExtensionProtocol.h"
+      - "../../packages/expo-dev-menu/ios/DevMenuAppInstance.swift"
+      - "../../packages/expo-dev-menu/ios/DevMenuGestureRecognizer.swift"
+      - "../../packages/expo-dev-menu/ios/DevMenuManager.swift"
+      - "../../packages/expo-dev-menu/ios/DevMenuUtils.swift"
+      - "../../packages/expo-dev-menu/ios/DevMenuViewController.swift"
+      - "../../packages/expo-dev-menu/ios/DevMenuWindow.swift"
+      - "../../packages/expo-dev-menu/ios/Headers/EXDevMenu-Bridging-Header.h"
+      - "../../packages/expo-dev-menu/ios/Headers/EXDevMenu.h"
+      - "../../packages/expo-dev-menu/ios/Headers/RCTRootView+Private.h"
+      - "../../packages/expo-dev-menu/ios/Interceptors/DevMenuMotionInterceptor.swift"
+      - "../../packages/expo-dev-menu/ios/Interceptors/DevMenuTouchInterceptor.swift"
+      - "../../packages/expo-dev-menu/ios/MenuItems/DevMenuItem.swift"
+      - "../../packages/expo-dev-menu/ios/Modules/DevMenuInternalModule.swift"
+      - "../../packages/expo-dev-menu/ios/Modules/DevMenuModule.swift"
+      - "../../packages/expo-dev-menu/ios/Protocols/DevMenuDelegateProtocol.swift"
+      - "../../packages/expo-dev-menu/ios/Protocols/DevMenuExtensionProtocol.swift"
       - "../../packages/expo-dev-menu/README.md"
     PROJECT_NAME: EXDevMenu
     SPECS:
@@ -10346,8 +10339,8 @@ CACHE_KEYS:
       - nanopb/encode (0.3.9011)
   Pods-Exponent:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 1eb3ce7a3ed1b7bc90804d945d9cec3e
-      Release: 1eb3ce7a3ed1b7bc90804d945d9cec3e
+      Debug: 044e18a32642905f9ad0baca05440bd2
+      Release: 044e18a32642905f9ad0baca05440bd2
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/EXDevMenu/EXDevMenu.bundle"
       - "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMLVisionFaceModel/GoogleMVFaceDetectorResources.bundle"
@@ -10360,12 +10353,12 @@ CACHE_KEYS:
       - "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   Pods-ExponentIntegrationTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 394ac874011676daf701cb81385cff68
-      Release: 394ac874011676daf701cb81385cff68
+      Debug: 92881963003caafe8a8afa430f6903ec
+      Release: 92881963003caafe8a8afa430f6903ec
   Pods-Tests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 394ac874011676daf701cb81385cff68
-      Release: 394ac874011676daf701cb81385cff68
+      Debug: 92881963003caafe8a8afa430f6903ec
+      Release: 92881963003caafe8a8afa430f6903ec
   Protobuf:
     BUILD_SETTINGS_CHECKSUM:
       Protobuf:
