@@ -63,7 +63,7 @@ This method _must_ be called before anything else, otherwise an error will be th
 
 #### Returns
 
-A `Promise` that resolves when finished connecting.
+A `Promise` that resolves with an `IAPQueryResponse` when finished connecting.
 
 #### Example
 
